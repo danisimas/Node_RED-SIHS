@@ -3,7 +3,7 @@ from random import randint
 from time import sleep
 
 def temp():
-    value = randint(0,100)
+    value = randint(0,32)
     return value
 
 def lumi ():
@@ -28,4 +28,4 @@ while True:
     lumi_value = lumi()
     client.publish("lab/airconditioner", temp_value)
     client.publish("lab/lights", lumi_value)
-    sleep(1)
+    sleep(2)
