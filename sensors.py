@@ -26,14 +26,6 @@ client.loop_start()
 while True:
     temp_value = temp()
     lumi_value = lumi()
-
-    if temp_value > 25:
-        client.publish("lab/airconditioner", "on")
-    else:
-        client.publish("lab/airconditioner", "off")
-    
-    if lumi_value < 50:
-        client.publish("lab/lights", "on")
-    else:
-        client.publish("lab/lights", "off")
+    client.publish("lab/airconditioner", temp_value)
+    client.publish("lab/lights", lumi_value)
     sleep(1)
